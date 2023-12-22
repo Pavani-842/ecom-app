@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sku: MyString
+  mrp: 9.99
+  quantity: 1
+  discount: 9.99
+  net_price: 9.99
+  order: one
+
+two:
+  sku: MyString
+  mrp: 9.99
+  quantity: 1
+  discount: 9.99
+  net_price: 9.99
+  order: two

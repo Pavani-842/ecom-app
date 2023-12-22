@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your E-commerce Application</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <!-- Add your stylesheet link or styles here -->
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!-- Add your stylesheet link or styles here -->
+  <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'customers', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><%= link_to 'Home', root_path %></li>
+    <li><%= link_to 'Customers', customers_path %></li>
+    <li><%= link_to 'Orders', orders_path %></li>
+    <li><%= link_to 'Products', products_path %></li>
+    <li><%= link_to 'Addresses', addresses_path %></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <%= yield %>
+</div>
+
+</body>
+</html>
