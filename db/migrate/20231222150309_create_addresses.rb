@@ -9,7 +9,7 @@ class CreateAddresses < ActiveRecord::Migration[7.1]
       t.string :state
       t.string :country
       t.string :pin
-
+      t.references :customer, foreign_key: true
       t.timestamps
     end
   end

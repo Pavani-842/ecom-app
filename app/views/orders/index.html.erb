@@ -1,0 +1,29 @@
+<h1>Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order Number</th>
+      <th>Date of Order</th>
+      <th>Status</th>
+      <!-- Add more order attributes here -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.order_number %></td>
+        <td><%= order.date_of_order %></td>
+        <td><%= order.order_status %></td>
+        <!-- Add more order attributes here -->
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Delete', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>

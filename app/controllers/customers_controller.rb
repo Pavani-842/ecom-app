@@ -1,3 +1,5 @@
+# app/controllers/customers_controller.rb
+
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
@@ -10,6 +12,7 @@ class CustomersController < ApplicationController
 
   def new
     @customer = Customer.new
+    @customer.build_address
   end
 
   def create
@@ -45,6 +48,6 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:name, :phone, :email)
+    params.require(:customer).permit(:name, :phone, :email, address_attributes: [:address_line_1, :address_line_2, :city, :state, :country, :pin])
   end
 end

@@ -1,33 +1,76 @@
 <%= form_with(model: @customer, local: true) do |form| %>
-    <% if @customer.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
-  
-        <ul>
-          <% @customer.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-  
-    <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
-  
-    <div class="field">
-      <%= form.label :phone %>
-      <%= form.text_field :phone %>
-    </div>
-  
-    <div class="field">
-      <%= form.label :email %>
-      <%= form.text_field :email %>
-    </div>
-  
-    <div class="actions">
-      <%= form.submit %>
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+        <% @customer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
-  
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <!-- Address Fields -->
+  <h2>Address</h2>
+  <div class="field">
+    <%= form.fields_for :address do |address_form| %>
+      <%= address_form.label :address_line_1 %>
+      <%= address_form.text_field :address_line_1 %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.fields_for :address do |address_form| %>
+      <%= address_form.label :address_line_2 %>
+      <%= address_form.text_field :address_line_2 %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.fields_for :address do |address_form| %>
+      <%= address_form.label :city %>
+      <%= address_form.text_field :city %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.fields_for :address do |address_form| %>
+      <%= address_form.label :state %>
+      <%= address_form.text_field :state %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.fields_for :address do |address_form| %>
+      <%= address_form.label :country %>
+      <%= address_form.text_field :country %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.fields_for :address do |address_form| %>
+      <%= address_form.label :pin %>
+      <%= address_form.text_field :pin %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

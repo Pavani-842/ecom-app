@@ -1,0 +1,36 @@
+<h1>Address</h1>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @address.customer.name if @address.customer %>
+</p>
+
+<p>
+  <strong>Line 1:</strong>
+  <%= @address.address_line_1 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @address.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @address.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @address.country %>
+</p>
+
+<p>
+  <strong>Pin:</strong>
+  <%= @address.pin %>
+</p>
+
+<!-- Add more address attributes here -->
+
+<%= link_to 'Edit', edit_address_path(@address) %> |
+<%= link_to 'Back', addresses_path %>

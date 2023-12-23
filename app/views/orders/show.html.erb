@@ -1,0 +1,21 @@
+<h1>Order</h1>
+
+<p>
+  <strong>Order Number:</strong>
+  <%= @order.order_number %>
+</p>
+
+<p>
+  <strong>Date of Order:</strong>
+  <%= @order.date_of_order %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.order_status %>
+</p>
+
+<!-- Add more order attributes here -->
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
